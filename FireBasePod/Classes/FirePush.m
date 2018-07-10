@@ -7,9 +7,11 @@
 
 #import "FirePush.h"
 
-@import FirebaseCore;
-@import FirebaseInstanceID;
-@import FirebaseMessaging;
+#import "FirebaseCore/FIRApp.h"
+
+#import "FirebaseInstanceID/FIRInstanceID.h"
+
+#import "FirebaseMessaging/FirebaseMessaging.h"
 
 
 #if defined(__IPHONE_10_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
