@@ -8,6 +8,8 @@
 
 #import "FireBaseViewController.h"
 
+#import "FirePush.h"
+
 @interface FireBaseViewController ()
 
 @end
@@ -17,7 +19,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
+    [[FirePush shareInstance] completion:^(firebaseState state, NSDictionary *info) {
+        
+        NSLog(@"%i --- %@", state, info);
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning

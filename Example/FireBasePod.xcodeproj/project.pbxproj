@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0491330820F45FEA00757BF7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0491330720F45FEA00757BF7 /* GoogleService-Info.plist */; };
+		0491330B20F467F100757BF7 /* ggggViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0491330A20F467F100757BF7 /* ggggViewController.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -37,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0491330720F45FEA00757BF7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0491330920F467F100757BF7 /* ggggViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ggggViewController.h; sourceTree = "<group>"; };
+		0491330A20F467F100757BF7 /* ggggViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ggggViewController.m; sourceTree = "<group>"; };
 		221BA45C7C7F3C44C8F0417A /* Pods_FireBasePod_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FireBasePod_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34A54FD2FE245E1483D6EB86 /* Pods-FireBasePod_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireBasePod_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-FireBasePod_Example/Pods-FireBasePod_Example.release.xcconfig"; sourceTree = "<group>"; };
 		43A37E61980049FC88D31A51 /* Pods-FireBasePod_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireBasePod_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FireBasePod_Example/Pods-FireBasePod_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -63,10 +68,10 @@
 		6307F43A98DEFEB084BB0E70 /* Pods-FireBasePod_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireBasePod_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FireBasePod_Tests/Pods-FireBasePod_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9A57553EFD086C54F40AFE43 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		E2157A26E41BD793E407AE08 /* FireBasePod.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = FireBasePod.podspec; path = ../FireBasePod.podspec; sourceTree = "<group>"; };
+		9A57553EFD086C54F40AFE43 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		E2157A26E41BD793E407AE08 /* FireBasePod.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = FireBasePod.podspec; path = ../FireBasePod.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		E39B5DFEF5CF4FD5C910E351 /* Pods-FireBasePod_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireBasePod_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FireBasePod_Tests/Pods-FireBasePod_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		EE985EC02F83614138AB7BB5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		EE985EC02F83614138AB7BB5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +148,7 @@
 		6003F593195388D20070C39A /* Example for FireBasePod */ = {
 			isa = PBXGroup;
 			children = (
+				0491330720F45FEA00757BF7 /* GoogleService-Info.plist */,
 				6003F59C195388D20070C39A /* FireBaseAppDelegate.h */,
 				6003F59D195388D20070C39A /* FireBaseAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -151,6 +157,8 @@
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				0491330920F467F100757BF7 /* ggggViewController.h */,
+				0491330A20F467F100757BF7 /* ggggViewController.m */,
 			);
 			name = "Example for FireBasePod";
 			path = FireBasePod;
@@ -278,6 +286,7 @@
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
+				0491330820F45FEA00757BF7 /* GoogleService-Info.plist in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
@@ -319,11 +328,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FireBasePod_Example/Pods-FireBasePod_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FireBasePod/FireBasePod.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FireBasePod.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -357,6 +370,7 @@
 			files = (
 				6003F59E195388D20070C39A /* FireBaseAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* FireBaseViewController.m in Sources */,
+				0491330B20F467F100757BF7 /* ggggViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -489,7 +503,7 @@
 				GCC_PREFIX_HEADER = "FireBasePod/FireBasePod-Prefix.pch";
 				INFOPLIST_FILE = "FireBasePod/FireBasePod-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vmg.Emozik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -504,7 +518,7 @@
 				GCC_PREFIX_HEADER = "FireBasePod/FireBasePod-Prefix.pch";
 				INFOPLIST_FILE = "FireBasePod/FireBasePod-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vmg.Emozik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

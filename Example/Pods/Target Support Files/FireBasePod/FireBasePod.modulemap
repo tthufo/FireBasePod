@@ -1,0 +1,6 @@
+framework module FireBasePod {
+  umbrella header "FireBasePod-umbrella.h"
+
+  export *
+  module * { export * }
+}
