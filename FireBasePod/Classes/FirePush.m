@@ -147,4 +147,17 @@ static FirePush * __shareInstance = nil;
     [[FIRMessaging messaging] disconnect];
 }
 
+- (void)didUnregisterNotification
+{
+    if([self isNotificationRegistered])
+    {
+        [[UIApplication sharedApplication] unregisterForRemoteNotifications];
+    }
+}
+
+- (BOOL)isNotificationRegistered
+{
+    return [[UIApplication sharedApplication] isRegisteredForRemoteNotifications];
+}
+
 @end

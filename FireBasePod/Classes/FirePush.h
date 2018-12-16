@@ -40,4 +40,8 @@ typedef void (^PushEvent)(firebaseState state, NSDictionary* info);
 
 - (void)disconnectToFcm;
 
+- (void)didUnregisterNotification;
+
+- (BOOL)isNotificationRegistered;
+
 @end
