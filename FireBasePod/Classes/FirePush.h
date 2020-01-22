@@ -17,7 +17,8 @@ typedef enum __fireState
     willConnect,//
     failedConnect,//
     successConnect,//
-    willDisconnect//
+    willDisconnect,//
+    failedGetToken,//
 }firebaseState;
 
 typedef void (^PushEvent)(firebaseState state, NSDictionary* info);
@@ -32,7 +33,11 @@ typedef void (^PushEvent)(firebaseState state, NSDictionary* info);
 
 - (void)didRegister;
 
+- (void)reRegisterNotification;
+
 - (void)didReiciveToken:(NSData*)deviceToken withType:(int)type;
+
+- (void)didFailedRegisterNotification:(NSError*)error;
 
 - (void)completion:(PushEvent)_completion;
 
@@ -43,5 +48,7 @@ typedef void (^PushEvent)(firebaseState state, NSDictionary* info);
 - (void)didUnregisterNotification;
 
 - (BOOL)isNotificationRegistered;
+
+- (NSString*)deviceToken;
 
 @end

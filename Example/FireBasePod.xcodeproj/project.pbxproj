@@ -327,7 +327,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FireBasePod_Example/Pods-FireBasePod_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-FireBasePod_Example/Pods-FireBasePod_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -340,7 +340,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FireBasePod_Example/Pods-FireBasePod_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FireBasePod_Example/Pods-FireBasePod_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4A552C8F3A9AB5D950C0AC70 /* [CP] Check Pods Manifest.lock */ = {

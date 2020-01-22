@@ -25,6 +25,7 @@
 #endif
 
 @interface FirePush () <FIRMessagingDelegate>
+
 @end
 
 static FirePush * __shareInstance = nil;
@@ -89,11 +90,26 @@ static FirePush * __shareInstance = nil;
                                                  name:kFIRInstanceIDTokenRefreshNotification object:nil];
 }
 
+- (void)reRegisterNotification
+{
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
+}
+
 - (void)didReiciveToken:(NSData*)deviceToken withType:(int)type
 {
     [[FIRMessaging messaging] setAPNSToken:deviceToken type:type];
     
-    self.completion(0, @{@"deviceToken":deviceToken});
+    if (self.completion) {
+        self.completion(0, @{@"deviceToken": [[FIRMessaging messaging] FCMToken] ? [[FIRMessaging messaging] FCMToken] : @""});
+    }
+}
+
+- (void)didFailedRegisterNotification:(NSError*)error
+{
+    NSLog(@"%@", error.userInfo);
+    if (self.completion) {
+        self.completion(7, @{@"errorMessage": error.userInfo});
+    }
 }
 
 #if defined(__IPHONE_10_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
@@ -101,50 +117,61 @@ static FirePush * __shareInstance = nil;
 - (void)applicationReceivedRemoteMessage:(FIRMessagingRemoteMessage *)remoteMessage
 {
     NSLog(@"%@", remoteMessage.appData);
-    
-    self.completion(1, @{@"remoteMessage":remoteMessage});
+    if (self.completion) {
+        self.completion(1, @{@"remoteMessage":remoteMessage});
+    }
 }
 
 #endif
 
 - (void)tokenRefreshNotification:(NSNotification *)notification
 {
-    NSString *refreshedToken = [[FIRInstanceID instanceID] token];
-        
-    self.completion(2, @{@"refreshToken":refreshedToken});
-    
-    [self connectToFcm];
-}
-
-- (void)connectToFcm
-{
-    if (![[FIRInstanceID instanceID] token])
-    {
-        return;
-    }
-    
-    self.completion(3, @{@"willConnect":@""});
-
-    [[FIRMessaging messaging] disconnect];
-    
-    [[FIRMessaging messaging] connectWithCompletion:^(NSError * _Nullable error) {
+    [[FIRInstanceID instanceID] instanceIDWithHandler:^(FIRInstanceIDResult * _Nullable result,
+                                                        NSError * _Nullable error) {
         if (error != nil) {
-            NSLog(@"Unable to connect to FCM. %@", error);
-            
-            self.completion(4, @{@"connectFailed":error});
+            NSLog(@"Error fetching remote instance ID: %@", error);
         } else {
-            NSLog(@"Connected to FCM.");
-            
-            self.completion(5, @{@"connectSuccess":@""});
+            if (self.completion) {
+                self.completion(2, @{@"refreshToken": result.token});
+            }
+            [self connectToFcm];
         }
     }];
 }
 
+- (void)connectToFcm
+{
+//    if (![[FIRInstanceID instanceID] token])
+//    {
+//        return;
+//    }
+
+    if (self.completion) {
+        self.completion(3, @{@"willConnect":@""});
+    }
+    
+    [[FIRMessaging messaging] setShouldEstablishDirectChannel:YES];
+    
+//    [[FIRMessaging messaging] connectWithCompletion:^(NSError * _Nullable error) {
+//        if (error != nil) {
+//            NSLog(@"Unable to connect to FCM. %@", error);
+//
+//            self.completion(4, @{@"connectFailed":error});
+//        } else {
+//            NSLog(@"Connected to FCM.");
+//
+//            self.completion(5, @{@"connectSuccess":@""});
+//        }
+//    }];
+}
+
 - (void)disconnectToFcm
 {
-    self.completion(6, @{@"willDisconnect":@""});
-
-    [[FIRMessaging messaging] disconnect];
+    if (self.completion)
+    {
+        self.completion(6, @{@"willDisconnect":@""});
+    }
+    [[FIRMessaging messaging] setShouldEstablishDirectChannel: NO];
 }
 
 - (void)didUnregisterNotification
@@ -158,6 +185,11 @@ static FirePush * __shareInstance = nil;
 - (BOOL)isNotificationRegistered
 {
     return [[UIApplication sharedApplication] isRegisteredForRemoteNotifications];
+}
+
+- (NSString*)deviceToken
+{
+    return [[FIRMessaging messaging] FCMToken];
 }
 
 @end
