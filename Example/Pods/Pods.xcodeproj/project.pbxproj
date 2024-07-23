@@ -3968,6 +3968,39 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		01114E0A730B8B3925BCB1AC247B443C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 847D59F0F8C5122932EF2006CB63291F /* FireBasePod.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/FireBasePod/FireBasePod-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FireBasePod/FireBasePod-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/FireBasePod/FireBasePod.modulemap";
+				PRODUCT_MODULE_NAME = FireBasePod;
+				PRODUCT_NAME = FireBasePod;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		022CF257AECCC5D8C1F300998154B8EE /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5D70919E45C2782194599FB8E04B284C /* nanopb.release.xcconfig */;
@@ -4081,38 +4114,6 @@
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
-		};
-		1961E5594A732718A64F092E8C93002E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 847D59F0F8C5122932EF2006CB63291F /* FireBasePod.release.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/FireBasePod/FireBasePod-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FireBasePod/FireBasePod-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FireBasePod/FireBasePod.modulemap";
-				PRODUCT_MODULE_NAME = FireBasePod;
-				PRODUCT_NAME = FireBasePod;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		1CB5D1668175B7BF0B2A2C4AF3C682D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -4301,6 +4302,38 @@
 			};
 			name = Release;
 		};
+		5F931184790E76F2B16FC696CE7CA33E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4FF8D1C570AA3D03D673F7C6299A378 /* FireBasePod.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/FireBasePod/FireBasePod-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FireBasePod/FireBasePod-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/FireBasePod/FireBasePod.modulemap";
+				PRODUCT_MODULE_NAME = FireBasePod;
+				PRODUCT_NAME = FireBasePod;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		5FDA469D8BAE9E36C0F3A4878368C3E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 094E43BE8881B324A9FAB201E1798EE2 /* FirebaseCore.debug.xcconfig */;
@@ -4464,37 +4497,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		76F0D17309FA421575095683E6A9C29B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A4FF8D1C570AA3D03D673F7C6299A378 /* FireBasePod.debug.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/FireBasePod/FireBasePod-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FireBasePod/FireBasePod-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FireBasePod/FireBasePod.modulemap";
-				PRODUCT_MODULE_NAME = FireBasePod;
-				PRODUCT_NAME = FireBasePod;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		7A907DF54F25C8A224E135A78D21432E /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -5275,8 +5277,8 @@
 		AB6F9F43785CF88A95E1B6B666F06EC8 /* Build configuration list for PBXNativeTarget "FireBasePod" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				76F0D17309FA421575095683E6A9C29B /* Debug */,
-				1961E5594A732718A64F092E8C93002E /* Release */,
+				5F931184790E76F2B16FC696CE7CA33E /* Debug */,
+				01114E0A730B8B3925BCB1AC247B443C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

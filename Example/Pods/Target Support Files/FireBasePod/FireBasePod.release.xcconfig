@@ -4,7 +4,7 @@ CONFIGURATION_BUILD_DIR = ${PODS_CONFIGURATION_BUILD_DIR}/FireBasePod
 FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCore" "${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCoreInternal" "${PODS_CONFIGURATION_BUILD_DIR}/FirebaseInstallations" "${PODS_CONFIGURATION_BUILD_DIR}/FirebaseMessaging" "${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransport" "${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities" "${PODS_CONFIGURATION_BUILD_DIR}/PromisesObjC" "${PODS_CONFIGURATION_BUILD_DIR}/nanopb" "${PODS_ROOT}/FirebaseAnalytics/Frameworks" "${PODS_ROOT}/GoogleAppMeasurement/Frameworks" "${PODS_XCFRAMEWORKS_BUILD_DIR}/FirebaseAnalytics/AdIdSupport" "${PODS_XCFRAMEWORKS_BUILD_DIR}/GoogleAppMeasurement/AdIdSupport" "${PODS_XCFRAMEWORKS_BUILD_DIR}/GoogleAppMeasurement/WithoutAdIdSupport" $(inherited) "${PODS_ROOT}/FirebaseCore/Frameworks" "${PODS_ROOT}/FirebaseMessaging/Frameworks"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public"
-OTHER_LDFLAGS = $(inherited) -framework "FirebaseCore" -framework "FirebaseMessaging" -weak_framework "UserNotifications"
+OTHER_LDFLAGS = $(inherited) -framework "FirebaseCore" -framework "FirebaseMessaging"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_DEVELOPMENT_LANGUAGE = ${DEVELOPMENT_LANGUAGE}

@@ -34,7 +34,7 @@ s.source_files = 'FireBasePod/Classes'
 
 s.public_header_files = 'FireBasePod/Classes/*.h'
 
-#s.static_framework = true
+s.static_framework = true
 
 s.dependency 'Firebase/Core', '~> 10.29'
 s.dependency 'Firebase/Messaging', '~> 10.29'

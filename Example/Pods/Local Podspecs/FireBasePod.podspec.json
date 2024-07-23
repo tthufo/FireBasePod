@@ -20,6 +20,7 @@
   },
   "source_files": "FireBasePod/Classes",
   "public_header_files": "FireBasePod/Classes/*.h",
+  "static_framework": true,
   "dependencies": {
     "Firebase/Core": [
       "~> 10.29"

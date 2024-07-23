@@ -1,6 +1,7 @@
 use_frameworks!
 
 target 'FireBasePod_Example' do
+  use_modular_headers!
   pod 'FireBasePod', :path => '../'
 
   target 'FireBasePod_Tests' do
