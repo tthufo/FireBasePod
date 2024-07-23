@@ -20,7 +20,6 @@
   },
   "source_files": "FireBasePod/Classes",
   "public_header_files": "FireBasePod/Classes/*.h",
-  "static_framework": true,
   "dependencies": {
     "Firebase/Core": [
       "~> 10.29"
@@ -30,8 +29,8 @@
     ]
   },
   "pod_target_xcconfig": {
-    "OTHER_LDFLAGS": "$(inherited) -framework \"FirebaseCore\" -framework \"FirebaseMessaging\" -framework \"FirebaseInstanceID\"",
+    "OTHER_LDFLAGS": "$(inherited) -framework \"FirebaseCore\" -framework \"FirebaseMessaging\"",
     "CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES": "YES",
-    "FRAMEWORK_SEARCH_PATHS": "$(inherited) \"${PODS_ROOT}/FirebaseCore/Frameworks\" \"${PODS_ROOT}/FirebaseMessaging/Frameworks\" \"${PODS_ROOT}/FirebaseInstanceID/Frameworks\""
+    "FRAMEWORK_SEARCH_PATHS": "$(inherited) \"${PODS_ROOT}/FirebaseCore/Frameworks\" \"${PODS_ROOT}/FirebaseMessaging/Frameworks\""
   }
 }

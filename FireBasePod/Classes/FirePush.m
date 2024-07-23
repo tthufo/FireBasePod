@@ -9,7 +9,7 @@
 
 #import "FirebaseCore/FIRApp.h"
 
-#import "FirebaseInstanceID/FIRInstanceID.h"
+//#import "FirebaseInstanceID/FIRInstanceID.h"
 
 #import "FirebaseMessaging/FirebaseMessaging.h"
 
@@ -84,10 +84,10 @@ static FirePush * __shareInstance = nil;
 
     [FIRMessaging messaging].delegate = self;
     
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:kFIRInstanceIDTokenRefreshNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:FIRMessagingRegistrationTokenRefreshedNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tokenRefreshNotification:)
-                                                 name:kFIRInstanceIDTokenRefreshNotification object:nil];
+                                                 name:FIRMessagingRegistrationTokenRefreshedNotification object:nil];
 }
 
 - (void)reRegisterNotification
@@ -114,9 +114,11 @@ static FirePush * __shareInstance = nil;
 
 #if defined(__IPHONE_10_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
 
-- (void)applicationReceivedRemoteMessage:(FIRMessagingRemoteMessage *)remoteMessage
+//- (void)applicationReceivedRemoteMessage:(FIRMessagingRemoteMessage *)remoteMessage
+- (void)applicationReceivedRemoteMessage:(FIRMessagingMessageInfo *)remoteMessage
+
 {
-    NSLog(@"%@", remoteMessage.appData);
+    NSLog(@"%@", remoteMessage.description);
     if (self.completion) {
         self.completion(1, @{@"remoteMessage":remoteMessage});
     }
@@ -126,17 +128,27 @@ static FirePush * __shareInstance = nil;
 
 - (void)tokenRefreshNotification:(NSNotification *)notification
 {
-    [[FIRInstanceID instanceID] instanceIDWithHandler:^(FIRInstanceIDResult * _Nullable result,
-                                                        NSError * _Nullable error) {
-        if (error != nil) {
-            NSLog(@"Error fetching remote instance ID: %@", error);
-        } else {
-            if (self.completion) {
-                self.completion(2, @{@"refreshToken": result.token});
-            }
-            [self connectToFcm];
-        }
+    [[FIRMessaging messaging] tokenWithCompletion:^(NSString *token, NSError *error) {
+      if (error != nil) {
+        NSLog(@"Error getting FCM registration token: %@", error);
+      } else {
+        NSLog(@"FCM registration token: %@", token);
+          if (self.completion) {
+              self.completion(2, @{@"refreshToken": token});
+          }
+      }
     }];
+//    [[FIRInstanceID instanceID] instanceIDWithHandler:^(FIRInstanceIDResult * _Nullable result,
+//                                                        NSError * _Nullable error) {
+//        if (error != nil) {
+//            NSLog(@"Error fetching remote instance ID: %@", error);
+//        } else {
+//            if (self.completion) {
+//                self.completion(2, @{@"refreshToken": result.token});
+//            }
+//            [self connectToFcm];
+//        }
+//    }];
 }
 
 - (void)connectToFcm
@@ -150,7 +162,7 @@ static FirePush * __shareInstance = nil;
         self.completion(3, @{@"willConnect":@""});
     }
     
-    [[FIRMessaging messaging] setShouldEstablishDirectChannel:YES];
+    [[FIRMessaging messaging] setShouldGroupAccessibilityChildren:YES];
     
 //    [[FIRMessaging messaging] connectWithCompletion:^(NSError * _Nullable error) {
 //        if (error != nil) {
@@ -171,7 +183,8 @@ static FirePush * __shareInstance = nil;
     {
         self.completion(6, @{@"willDisconnect":@""});
     }
-    [[FIRMessaging messaging] setShouldEstablishDirectChannel: NO];
+    [[FIRMessaging messaging] setShouldGroupAccessibilityChildren: NO];
+//    [[FIRMessaging messaging] setShouldEstablishDirectChannel: NO];
 }
 
 - (void)didUnregisterNotification
