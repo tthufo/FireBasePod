@@ -19,6 +19,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     [[FirePush shareInstance] completion:^(firebaseState state, NSDictionary *info) {
         
         NSLog(@"%i --- %@", state, info);

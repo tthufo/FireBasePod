@@ -27,6 +27,13 @@
     }];
 }
 
+- (IBAction)didPress:(id)sender {
+    [[FirePush shareInstance] didUnregisterNotification];
+//    [[FirePush shareInstance] reRegisterNotification];
+
+    NSLog(@"%@", @"awnn");
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
